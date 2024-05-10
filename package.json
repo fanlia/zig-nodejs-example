@@ -4,7 +4,7 @@
   "description": "zig nodejs example",
   "main": "index.js",
   "scripts": {
-    "build": "zig build-lib -mcpu=baseline -OReleaseSmall -dynamic -lc -isystem node_modules/node-api-headers/include src/lib.zig -femit-bin=dist/lib.node",
+    "build": "mkdir -p dist && zig build-lib -mcpu=baseline -OReleaseSmall -dynamic -lc -isystem node_modules/node-api-headers/include src/lib.zig -femit-bin=dist/lib.node",
     "test": "node test.js"
   },
   "keywords": [],
