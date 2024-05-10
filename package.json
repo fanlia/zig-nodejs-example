@@ -1,0 +1,16 @@
+{
+  "name": "zig-nodejs-example",
+  "version": "1.0.0",
+  "description": "zig nodejs example",
+  "main": "index.js",
+  "scripts": {
+    "build": "zig build-lib -mcpu=baseline -OReleaseSmall -dynamic -lc -isystem node_modules/node-api-headers/include src/lib.zig -femit-bin=dist/lib.node",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-api-headers": "^1.1.0"
+  }
+}
