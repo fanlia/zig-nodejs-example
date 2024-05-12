@@ -14,5 +14,8 @@ pub fn build(b: *std.Build) void {
         .path = "node_modules/node-api-headers/include/",
     });
     lib.linkLibC();
-    b.installArtifact(lib);
+    const wf = b.addWriteFiles();
+    wf.addCopyFileToSource(lib.getEmittedBin(), "zig-out/lib/lib.node");
+    wf.step.dependOn(&lib.step);
+    b.getInstallStep().dependOn(&wf.step);
 }
